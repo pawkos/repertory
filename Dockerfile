@@ -46,4 +46,4 @@ WORKDIR "$REPERTORY_DIR"
 
 ENV REPERTORY_DATA_DIR "/mnt/repertory"
 
-ENTRYPOINT ./repertory -o big_writes "$REPERTORY_DATA_DIR"
+# ENTRYPOINT ./repertory -o big_writes "$REPERTORY_DATA_DIR"
