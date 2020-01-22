@@ -21,11 +21,9 @@ ARG REPERTORY_DIR="/repertory"
 
 COPY --from=zip_downloader /repertory "${REPERTORY_DIR}"
 
-RUN apt-get update
-RUN apt-get install -y socat
-
 # Required system packages
-RUN apt-get update && apt-get -y install
+RUN apt-get update && apt-get -y install \
+      ibfuse-dev
 
 EXPOSE 20000
 
