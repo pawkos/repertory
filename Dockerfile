@@ -23,6 +23,7 @@ COPY --from=zip_downloader /repertory "${REPERTORY_DIR}"
 
 # Required system packages
 RUN apt-get update && apt-get -y install \
+      apt-utils \
       ibfuse-dev
 
 EXPOSE 20000
