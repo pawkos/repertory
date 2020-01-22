@@ -47,5 +47,5 @@ WORKDIR "$REPERTORY_DIR"
 ENV REPERTORY_DATA_DIR "/mnt/repertory"
 ENV REPERTORY_CONFIG "/root/.local/repertory/sia"
 
-# ENTRYPOINT ["tail", "-f", "/dev/null"]
-ENTRYPOINT ./repertory -o big_writes "$REPERTORY_DATA_DIR"
+ENTRYPOINT ["tail", "-f", "/dev/null"]
+# ENTRYPOINT ./repertory -o big_writes "$REPERTORY_DATA_DIR"
