@@ -32,7 +32,7 @@ RUN apt-get update && apt-get -y install \
   gcc \
   g++ \
   libfuse-dev \
-  libstdc++-9-dev \
+  libstdc++-6-dev \
   diffutils \
   git \
   tar \
