@@ -1,4 +1,4 @@
-FROM ubuntu:eoan AS zip_downloader
+FROM lsiobase/ubuntu:bionic AS zip_downloader
 LABEL maintainer="Pawel Kosciewicz <pawkos@gmail.com>"
 CMD bash
 
@@ -16,7 +16,7 @@ RUN wget "$REPERTORY_RELEASE" && \
       mkdir /repertory && \
       unzip -j "$REPERTORY_ZIP" -d /repertory
 
-FROM ubuntu:eoan
+FROM lsiobase/ubuntu:bionic
 ARG REPERTORY_DIR="/repertory"
 
 COPY --from=zip_downloader /repertory "${REPERTORY_DIR}"
@@ -47,5 +47,5 @@ WORKDIR "$REPERTORY_DIR"
 ENV REPERTORY_DATA_DIR "/mnt/repertory"
 ENV REPERTORY_CONFIG "/root/.local/repertory/sia"
 
-ENTRYPOINT ["tail", "-f", "/dev/null"]
-# ENTRYPOINT ./repertory -o big_writes "$REPERTORY_DATA_DIR"
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT ./repertory -o big_writes $REPERTORY_DATA_DIR
