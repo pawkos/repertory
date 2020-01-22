@@ -23,8 +23,22 @@ COPY --from=zip_downloader /repertory "${REPERTORY_DIR}"
 
 # Required system packages
 RUN apt-get update && apt-get -y install \
-      apt-utils \
-      ibfuse-dev
+  apt-utils \
+  build-essential \
+  curl \
+  pkg-config \
+  cmake \
+  make \
+  gcc \
+  g++ \
+  libfuse-dev \
+  libstdc++-9-dev \
+  diffutils \
+  git \
+  tar \
+  zip \
+  zlib1g-dev \
+  diffutils
 
 EXPOSE 20000
 
