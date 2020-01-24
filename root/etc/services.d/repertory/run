@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bash
+
+cd /app/repertory || exit
+
+echo "Starting Repertory."
+
+exec \
+	s6-setuidgid abc /bin/bash -c
