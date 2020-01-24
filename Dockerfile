@@ -38,10 +38,9 @@ RUN \
 	REPERTORY_RELEASE=$(curl -sX GET "https://api.bitbucket.org/2.0/repositories/blockstorage/repertory/downloads?pagelen=100" \
 	| jq -r 'first(.values[] | select(.links.self.href | endswith("_ubuntu18.04.zip")).links.self.href)'); \
  fi && \
- REPERTORY_VER=${REPERTORY_RELEASE#v} && \
  curl -o \
  /tmp/repertory.zip -L \
-      "https://bitbucket.org/blockstorage/repertory/downloads/repertory_{REPERTORY_VER}.zip" && \
+      "${REPERTORY_RELEASE}" && \
  mkdir -p /app/repertory && \
  unzip /tmp/repertory.zip -d /app/repertory && \
  echo "**** cleanup ****" && \
