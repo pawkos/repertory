@@ -32,7 +32,7 @@ RUN \
       tar \
       zip \
       zlib1g-dev \
-      diffutils
+      diffutils \
  echo "**** install repertory ****" && \
  if [ -z ${REPERTORY_RELEASE+x} ]; then \
 	REPERTORY_RELEASE=$(curl -sX GET "https://api.bitbucket.org/2.0/repositories/blockstorage/repertory/downloads?pagelen=100" \
