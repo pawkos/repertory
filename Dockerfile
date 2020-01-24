@@ -13,26 +13,26 @@ ARG DEBIAN_FRONTEND="noninteractive"
 RUN \
  echo "**** install packages ****" && \
  apt-get update && \
-      apt-get install -y \
-	curl \
-	jq \
-	unzip \
-      apt-utils \
-      build-essential \
-      curl \
-      pkg-config \
-      cmake \
-      make \
-      gcc \
-      g++ \
-      libfuse-dev \
-      libstdc++-6-dev \
-      diffutils \
-      git \
-      tar \
-      zip \
-      zlib1g-dev \
-      diffutils \
+	 apt-get install -y \
+	 curl \
+	 jq \
+	 unzip \
+	 apt-utils \
+	 build-essential \
+	 curl \
+	 pkg-config \
+	 cmake \
+	 make \
+	 gcc \
+	 g++ \
+	 libfuse-dev \
+	 libstdc++-6-dev \
+	 diffutils \
+	 git \
+	 tar \
+	 zip \
+	 zlib1g-dev \
+	 diffutils && \
  echo "**** install repertory ****" && \
  if [ -z ${REPERTORY_RELEASE+x} ]; then \
 	REPERTORY_RELEASE=$(curl -sX GET "https://api.bitbucket.org/2.0/repositories/blockstorage/repertory/downloads?pagelen=100" \
