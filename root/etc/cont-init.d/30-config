@@ -1,8 +1,12 @@
 #!/usr/bin/with-contenv bash
 
+# copy config
+[[ ! -e /config/config.json ]] && \
+	/app/repertory -gc
+#	cp /defaults/config.json /config/config.json
+	
 chown -R abc:abc /config
 
-# permissions (non-recursive) on config root and folders
-chown abc:abc \
-	/config \
-	/config/*
+# permissions
+chown -R abc:abc \
+	/config
