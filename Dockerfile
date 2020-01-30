@@ -15,6 +15,7 @@ RUN \
  apt-get update && \
 	 apt-get install -y \
 	 curl \
+	 unzip \
 	 libfuse-dev && \
  echo "**** install repertory ****" && \
  if [ -z ${REPERTORY_RELEASE+x} ]; then \
