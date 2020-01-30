@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 
 echo "Check if /config/config.json exists."
-[ ! -e "/config/config.json" ]; then
+if [ ! -e "/config/config.json" ]; then
 	echo "/config/config.json does not exists so we create one."
 	/app/repertory -gc
 #	cp /defaults/config.json /config/config.json
