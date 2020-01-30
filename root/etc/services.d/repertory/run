@@ -1,8 +1,10 @@
 #!/usr/bin/with-contenv bash
 
-cd /app/repertory || exit
+UMASK_SET=${UMASK_SET:-022}
+
+umask "$UMASK_SET"
 
 echo "Starting Repertory."
 
 exec \
-	s6-setuidgid abc /bin/bash -c
+	s6-setuidgid abc repertory -o uid=$PUID,gid=$PGID,big_writes /mnt/repertory
