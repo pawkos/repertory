@@ -7,7 +7,8 @@ umask "$UMASK_SET"
 echo "Starting Repertory."
 
 exec \
-	s6-setuidgid abc /app/repertory/repertory -o uid=${PUID},gid=${PGID},big_writes /mnt/repertory
+	s6-setuidgid abc /app/repertory/repertory -o uid=${PUID},gid=${PGID},big_writes /mnt/repertory && \
+	tail -f /dev/null
 
 #exec \
 #	s6-setuidgid abc tail -f /dev/null
