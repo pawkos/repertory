@@ -6,6 +6,11 @@ if [ ! -e "/config/.local/repertory/sia/config.json" ]; then
 	/app/repertory/repertory -gc
 fi
 
+# create folders
+if [ ! -d /mnt/repertory ]; then \
+	mkdir -p /mnt/repertory
+fi
+
 usermod -a -G sudo abc
 usermod -a -G root abc
 
