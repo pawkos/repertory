@@ -4,7 +4,7 @@ FROM lsiobase/ubuntu:bionic
 ARG BUILD_DATE
 ARG VERSION
 ARG REPERTORY_RELEASE
-LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL build_version="pawkos version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="pawkos"
 
 # environment settings
@@ -40,3 +40,4 @@ COPY root/ /
 # ports and volumes
 EXPOSE 20000
 VOLUME /config
+VOLUME /mnt/repertory
