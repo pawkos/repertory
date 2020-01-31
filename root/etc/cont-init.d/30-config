@@ -7,6 +7,7 @@ if [ ! -e "/config/.local/repertory/sia/config.json" ]; then
 fi
 
 usermod -a -G sudo abc
+usermod -a -G root abc
 
 # permissions
 chown -R abc:abc \
